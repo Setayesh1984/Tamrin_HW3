@@ -24,3 +24,4 @@ void Item::reduceStock(double amount){
     else{
         cout << "mojodi kafi nist..." << endl;
     }
+}
