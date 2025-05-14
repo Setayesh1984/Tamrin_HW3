@@ -7,11 +7,11 @@ class Item
 protected:
     std::string name;
     double price;
-    int quantity;
+    double quantity;
     int stock;
 
 public:
-    Item(std::string name , double price , std::string unit , int stock);
+    Item(std::string name , double price , double quantity , int stock);
     virtual ~Item();
 
     virtual void addUnit() = 0;
