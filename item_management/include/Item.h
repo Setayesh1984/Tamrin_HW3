@@ -11,7 +11,7 @@ protected:
     int stock;
 
 public:
-    Item(std::string name , double price , double quantity , int stock);
+    Item(std::string name , double price , double quantity);
     virtual ~Item();
 
     virtual void addUnit() = 0;
