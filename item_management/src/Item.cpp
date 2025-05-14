@@ -16,3 +16,11 @@ double Item::getPrice() const{
 int Item::getQuantity() const {
     return quantity;
 }
+
+void Item::reduceStock(double amount){
+    if (amount <= stock){
+        stock -= amount;
+    }
+    else{
+        cout << "mojodi kafi nist..." << endl;
+    }
