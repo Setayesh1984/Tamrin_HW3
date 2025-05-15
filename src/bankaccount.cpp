@@ -10,3 +10,24 @@ void BankAccount::deposit(const Currency& amount)
     Currency converted(amount.getValue() * amount.getConversionRate(), 1.0);
     balance = balance + converted;
 }
+
+
+//check bardasht money<saghf & hesab
+bool BankAccount::withdraw(const Currency& amount) 
+{
+    Currency converted(amount.getValue() * amount.getConversionRate(), 1.0);
+    if (converted.getValue() > transferLimit) 
+    {
+        std::cout << "Error: Amount more than transfer limit!pleas try again and less" << std::endl;
+        return false;
+    }
+
+//bi moshkel=true,else false
+    if (converted.getValue() > balance.getValue()) 
+    {
+        std::cout << "Error: mojodi kafi nist!" << std::endl;
+        return false;
+    }
+    balance = balance - converted;
+    return true;
+}
