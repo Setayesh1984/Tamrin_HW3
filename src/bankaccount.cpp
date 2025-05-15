@@ -31,3 +31,16 @@ bool BankAccount::withdraw(const Currency& amount)
     balance = balance - converted;
     return true;
 }
+
+
+Currency BankAccount::getBalance() const 
+{
+    return balance;
+}
+
+
+void BankAccount::printBalance() const 
+{
+    std::cout << "Current Balance: ";
+    balance.print();
+}
