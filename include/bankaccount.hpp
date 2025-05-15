@@ -15,6 +15,11 @@ class BankAccount
  
     void deposit(const Currency& amount);   //add money
     bool withdraw(const Currency& amount);  //kasr money(bool)
+
+    
+    Currency getBalance() const;              
+    void printBalance() const;                 
+
 };
 
 #endif
