@@ -21,5 +21,15 @@ void ShoppingCart::printItems() const
 
 bool ShoppingCart::checkout(BankAccount& account)
 {
-    
+    Currency total = calculateTotal();
+    return account.withdraw(total);
+}
+
+Currency ShoppingCart::calculateTotal() const
+{
+    Currency total(0.0 , 1.0);
+    for (const auto& item : items){
+        total = total + item.getPrice();
+    }
+    return total;
 }
