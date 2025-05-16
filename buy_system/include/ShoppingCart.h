@@ -6,12 +6,16 @@
 #include "Item.h"
 #include "BankAccount.h"
 
-struct CartEntry
+class CartEntry
 {
-    Item* item;
-    int quantity;
+private:
+    std::vector<Item> items;
 
-    CartEntry(Item* i , int q) : item(i) , quantity(q) {}
+public:
+    void addItem(const Item& item);
+    void printItems() const;
+    bool checkout(BankAccount& account);
+
 };
 
 #endif
