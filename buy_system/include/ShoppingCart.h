@@ -15,7 +15,7 @@ public:
     void addItem(const Item& item);
     void printItems() const;
     bool checkout(BankAccount& account);
-
+    Currency calculateTotal() const;
 };
 
 #endif
