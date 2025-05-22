@@ -33,16 +33,27 @@ void Currency::setConversionRate(double rate)
 
 
 
-Currency Currency::operator+(const Currency& other) const 
-{
-    double newValue = this->value + other.value;
-    return Currency(newValue, this->conversionRate);
+Currency Currency::operator+(const Currency& other) const {
+    double thisInDollar = this->value * this->conversionRate;
+    double otherInDollar = other.value * other.conversionRate;
+
+    double resultInDollar = thisInDollar + otherInDollar;
+
+    double resultValue = resultInDollar / this->conversionRate;
+
+    return Currency(resultValue, this->conversionRate);
 }
 
-Currency Currency::operator-(const Currency& other) const 
-{
-    double newValue = this->value - other.value;
-    return Currency(newValue, this->conversionRate);
+
+Currency Currency::operator-(const Currency& other) const {
+    double thisInDollar = this->value * this->conversionRate;
+    double otherInDollar = other.value * other.conversionRate;
+
+    double resultInDollar = thisInDollar - otherInDollar;
+
+    double resultValue = resultInDollar / this->conversionRate;
+
+    return Currency(resultValue, this->conversionRate);
 }
 
 Currency Currency::operator*(double factor) const 
@@ -86,4 +97,10 @@ bool Currency::operator>(const Currency& other) const
 void Currency::print() const 
 {
     std::cout << "Value: " << value << ", Conversion Rate: " << conversionRate << std::endl;
+}
+
+
+std::ostream& operator<<(std::ostream& os, const Currency& currency) {
+    os << currency.getValue() << " (" << currency.getConversionRate() << ")";
+    return os;
 }
