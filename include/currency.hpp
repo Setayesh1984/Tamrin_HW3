@@ -26,11 +26,12 @@ public:
     void setValue(double val);
     void setConversionRate(double rate);
 
-    // Operator overloads anche lazeme
+
     Currency operator+(const Currency& other) const;
     Currency operator-(const Currency& other) const;
     Currency operator*(double factor) const;
     Currency operator/(double divisor) const;
+
 
     bool operator==(const Currency& other) const;
     bool operator!=(const Currency& other) const;
@@ -38,6 +39,9 @@ public:
     bool operator>(const Currency& other) const;
 
     virtual void print() const;  // chape arz
+
+    friend std::ostream& operator<<(std::ostream& os, const Currency& currency);
+
 };
 
 #endif
