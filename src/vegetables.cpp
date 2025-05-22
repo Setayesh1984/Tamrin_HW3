@@ -12,7 +12,7 @@ void Vegetables::addUnit()
     std::cout << "one vegetable added: " << name << ", " << "Stock: " << stock << "\n";
 }
 
-void Vegetable::itemInfo() const{
+void Vegetables::itemInfo() const{
     std:: cout << "Vegetable: " << name << ", " << "Color: " << color << ", ";
     price.print();
     std::cout << "Quantity: " << quantity << " Kg \n";
