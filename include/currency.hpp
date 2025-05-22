@@ -27,10 +27,18 @@ public:
     void setConversionRate(double rate);
 
 
+
+
+    // Operator overloads anche lazeme
+
     Currency operator+(const Currency& other) const;
     Currency operator-(const Currency& other) const;
     Currency operator*(double factor) const;
     Currency operator/(double divisor) const;
+
+
+
+
 
 
     bool operator==(const Currency& other) const;
@@ -44,4 +52,6 @@ public:
 
 };
 
+
 #endif
+

@@ -12,7 +12,11 @@ class BankAccount
 
     public:
     BankAccount(double limit = 1000.0);     //pishfarz max enteghal
+
  
+
+
+
     void deposit(const Currency& amount);   //add money
     bool withdraw(const Currency& amount);  //kasr money(bool)
 
@@ -22,4 +26,7 @@ class BankAccount
 
 };
 
+
+
 #endif
+
