@@ -16,4 +16,5 @@ void Fruit::itemInfo() const {
     std::cout << "Fruit: " << name << ", " << "Type: " << type << ", ";
     price.print();
     std::cout << "Quantity: " << quantity << " Kg \n";
+    std ::cout << "Stock: " << stock << "\n";
 }
