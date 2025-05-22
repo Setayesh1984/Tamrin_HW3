@@ -15,4 +15,5 @@ void Drinks::itemInfo() const {
     std::cout << "Drink: " << name << ", Type: " << (isCold ? "Cold" : "Hot") << ", ";
     price.print();
     std::cout << "Quantity: " << quantity << " bottle \n"; 
+    std::cout << "Stock: " << stock << "\n";
 }
